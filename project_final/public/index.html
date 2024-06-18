@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+<body>
+    <header>
+        <h1>Rutas</h1>
+    </header>
+    <main>
+        <section class="formularios" id="formularioSection">
+            <form id="formulario">
+                <label for="partida">Salida:</label>
+                <input id="partida" class="text" name="partida" required>
+                <label for="destino">Destino:</label>
+                <input id="destino" class="text" name="destino" required>
+                <button type="button" id="calcularRuta">Calcular ruta</button>
+                <br>
+                <button type="button" id="agregarUbicacion">Agregar ubicación</button>
+            </form>
+            <div id="loader" style="display: none;">
+                <img src="images/carga.gif" alt="Cargando...">
+            </div>
+            <p id="estadoRuta"></p>
+            <button id="resolver" class="boton resolver" style="display: none;">Trazar Ruta</button> 
+        </section>
+        <section class="mapa" id="mi_mapa" style="height: 400px;"></section>
+        <section id="infoRuta" class="ruta-container" style="display: none;">
+            <h3>Trayectoria</h3>
+            <p id="ubicacionPartida"></p>
+            <p id="ubicacionDestino"></p>
+            <p id="distanciaMetros"></p>
+            <p id="distanciaKilometros"></p>
+            <p id="tiempoCamino"></p>
+            <button id="volver" style="display: none;">Regresar</button>
+        </section>
+    </main>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="polyline-encoded.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+
